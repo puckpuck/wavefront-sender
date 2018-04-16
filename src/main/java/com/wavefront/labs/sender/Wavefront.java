@@ -9,7 +9,11 @@ import java.util.Date;
 import java.util.Map;
 import java.util.stream.Stream;
 
-//HACK: This class is not supported in a production environment
+/**
+ * When using this class, you must ensure to call close after each batch of metrics are sent.
+ * Do not keep connections open, as they can become stale and production code will fail.
+ */
+
 public class Wavefront implements AutoCloseable {
 
 	private static final String DEFAULT_HOST = "localhost";
