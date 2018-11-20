@@ -11,7 +11,8 @@ public class MetricPoint {
 	private String source;
 	private Map<String, String> tags;
 
-	public MetricPoint() {}
+	public MetricPoint() {
+	}
 
 	public MetricPoint(String metric, double value, long timestamp, String source) {
 		this.metric = metric;
@@ -27,21 +28,21 @@ public class MetricPoint {
 
 	public String toString() {
 		StringBuilder metricLine = new StringBuilder();
-		metricLine.append(metric);
-		metricLine.append(" ");
-		metricLine.append(value);
-		metricLine.append(" ");
-		metricLine.append(timestamp);
-		metricLine.append(" source=\"");
-		metricLine.append(source);
-		metricLine.append("\"");
+		metricLine.append(metric)
+				.append(" ")
+				.append(value)
+				.append(" ")
+				.append(timestamp)
+				.append(" source=\"")
+				.append(source)
+				.append("\"");
 		if (tags != null) {
 			for (Map.Entry<String, String> tag : tags.entrySet()) {
-				metricLine.append(" \"");
-				metricLine.append(tag.getKey());
-				metricLine.append("\"=\"");
-				metricLine.append(tag.getValue());
-				metricLine.append("\"");
+				metricLine.append(" \"")
+						.append(tag.getKey())
+						.append("\"=\"")
+						.append(tag.getValue())
+						.append("\"");
 			}
 		}
 
